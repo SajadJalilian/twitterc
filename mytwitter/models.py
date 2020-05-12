@@ -8,11 +8,9 @@ from PIL import Image
 class Status(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.CharField(max_length=280)
-    retweeted_tweet_id = models.CharField(max_length=20)
+    retweeted_tweet_id = models.CharField(max_length=20, default="-1")
     date_posted = models.DateTimeField(default=timezone.now)
-    mention_to_other_tweet = models.OneToOneField(
-        "self", models.SET_NULL, blank=False, null=True
-    )
+    mention_to_other_tweet = models.CharField(max_length=20, default="-1")
 
     def __str__(self):
         return self.message[:140]
