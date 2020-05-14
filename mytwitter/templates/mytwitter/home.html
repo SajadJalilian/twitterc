@@ -1,6 +1,6 @@
 {% extends 'mytwitter/base.html' %}
 {% block content %}
     {% for status in statuses %}
-        <h1>{{ post.message }}</h1>
+        <h1>{{ status.message }}</h1>
     {% endfor %}
 {% endblock content %}
