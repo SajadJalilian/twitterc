@@ -36,6 +36,8 @@ class UserStatusListView(ListView):
 
 class StatusDetailView(DetailView):
     model = Status
+    template_name = "mytwitter/status_detail.html"
+    context_object_name = "status"
 
 
 class StatusCreateView(LoginRequiredMixin, CreateView):
